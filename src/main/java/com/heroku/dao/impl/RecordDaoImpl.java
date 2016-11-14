@@ -19,13 +19,12 @@ public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
 	        setDataSource(dataSource);
 	 }
 	    //...
-
+	 
 	@Override
 	public void deletebyId(long id) {
-		// TODO Auto-generated method stub
-		
+		String sql = "DELETE  FROM record where id=?";
+		 this.getJdbcTemplate().update(sql, id);
 	}
-	 
 
 	
 }
