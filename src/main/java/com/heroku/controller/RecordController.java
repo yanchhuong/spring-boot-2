@@ -12,9 +12,9 @@ import com.heroku.demo.Record;
 import com.heroku.service.impl.RecordServiceImpl;
 
 @RestController
-@RequestMapping("/record")
+@RequestMapping("/records")
 public class RecordController{
-	   private RecordServiceImpl recordServiceImpl;
+	 private RecordServiceImpl recordServiceImpl;
 
 	 @Autowired
      public RecordController(RecordServiceImpl recordServiceImpl){
