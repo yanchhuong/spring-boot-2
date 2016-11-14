@@ -22,8 +22,8 @@ public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
 	 
 	@Override
 	public void deletebyId(long id) {
-		/*String sql = "DELETE  FROM record where id=?";
-		 this.getJdbcTemplate().update(sql, id);*/
+		String sql = "DELETE  FROM record where id=?";
+		 this.getJdbcTemplate().update(sql, id);
 	}
 
 	

@@ -54,14 +54,4 @@ public class HomeController {
         }
         return home(model);
     }
-    
-    @RequestMapping(value="/delete" ,method = RequestMethod.POST)
-    public String deleteData(ModelMap model, 
-                             @ModelAttribute("insertRecord") @Valid Record record,
-                             BindingResult result) {
-        if (!result.hasErrors()) {
-            repository.save(record);
-        }
-        return home(model);
-    }
 }
