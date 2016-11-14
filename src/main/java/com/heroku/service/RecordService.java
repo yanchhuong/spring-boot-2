@@ -3,5 +3,5 @@ package com.heroku.service;
 public interface RecordService {
 
 	
-	void delete();
+	void delete(long id);
 }
