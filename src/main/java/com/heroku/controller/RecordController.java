@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.heroku.demo.Record;
 import com.heroku.service.impl.RecordServiceImpl;
 
-
-
 @RestController
 @RequestMapping("/record")
 public class RecordController{
@@ -35,6 +33,4 @@ public class RecordController{
 			 return recordServiceImpl.showAll();
 	  }
 	  
-
-	
 }
