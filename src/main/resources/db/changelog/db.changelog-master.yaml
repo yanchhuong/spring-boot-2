@@ -3,7 +3,6 @@ databaseChangeLog:
       id: 1
       author: jkutner
       changes:
-      
         - createTable:
             tableName: record
             columns:
@@ -15,23 +14,9 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-              re    name: data
+                  name: data
                   type: varchar(255)
                   constraints:
                     nullable: false
-                    
-        - createTable:
-            tableName: record1
-            columns:
-              - column:
-                  name: id
-                  type: int
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-              re    name: data
-                  type: varchar(255)
-                  constraints:
-                    nullable: false            
+                
+      
