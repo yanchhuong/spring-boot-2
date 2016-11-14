@@ -32,7 +32,7 @@ public class HomeController {
 
     private RecordRepository repository;
 
-    @Autowired
+ //   @Autowired
     public HomeController(RecordRepository repository) {
         this.repository = repository;
     }
