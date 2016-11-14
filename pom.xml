@@ -1410,11 +1410,14 @@
         <artifactId>jetty-plus</artifactId>
         <version>9.3.11.v20160721</version>
       </dependency>
+      
+      <!--  Security======================================================
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-security</artifactId>
         <version>9.3.11.v20160721</version>
       </dependency>
+      -->
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
@@ -2114,6 +2117,9 @@
           </exclusion>
         </exclusions>
       </dependency>
+      
+      <!--  Security========================================
+      
       <dependency>
         <groupId>org.springframework.ws</groupId>
         <artifactId>spring-ws-security</artifactId>
@@ -2125,6 +2131,8 @@
           </exclusion>
         </exclusions>
       </dependency>
+      
+     --> 
       <dependency>
         <groupId>org.springframework.ws</groupId>
         <artifactId>spring-ws-support</artifactId>
@@ -2152,31 +2160,7 @@
         <artifactId>sqlite-jdbc</artifactId>
         <version>3.8.11.2</version>
       </dependency>
-      <dependency>
-        <groupId>org.thymeleaf</groupId>
-        <artifactId>thymeleaf</artifactId>
-        <version>2.1.5.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.thymeleaf</groupId>
-        <artifactId>thymeleaf-spring4</artifactId>
-        <version>2.1.5.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.thymeleaf.extras</groupId>
-        <artifactId>thymeleaf-extras-conditionalcomments</artifactId>
-        <version>2.1.2.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.thymeleaf.extras</groupId>
-        <artifactId>thymeleaf-extras-java8time</artifactId>
-        <version>2.1.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.thymeleaf.extras</groupId>
-        <artifactId>thymeleaf-extras-springsecurity4</artifactId>
-        <version>2.1.2.RELEASE</version>
-      </dependency>
+     
       <dependency>
         <groupId>org.webjars</groupId>
         <artifactId>hal-browser</artifactId>
@@ -2487,11 +2471,15 @@
         <artifactId>spring-integration-scripting</artifactId>
         <version>4.3.1.RELEASE</version>
       </dependency>
+      
+      
+      <!--Security ========================================================
       <dependency>
         <groupId>org.springframework.integration</groupId>
         <artifactId>spring-integration-security</artifactId>
         <version>4.3.1.RELEASE</version>
       </dependency>
+        -->
       <dependency>
         <groupId>org.springframework.integration</groupId>
         <artifactId>spring-integration-sftp</artifactId>
@@ -2669,12 +2657,16 @@
         </exclusion>
       </exclusions>
     </dependency>
+    
+    <!--  Security ======================================================
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
       <version>1.4.0.RELEASE</version>
       <scope>compile</scope>
     </dependency>
+     -->
+    
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -2699,12 +2691,17 @@
       <version>2.0.3.RELEASE</version>
       <scope>compile</scope>
     </dependency>
+    
+    
+    <!--  Security===============================================================
     <dependency>
       <groupId>org.springframework.social</groupId>
       <artifactId>spring-social-security</artifactId>
       <version>1.1.0.RELEASE</version>
       <scope>compile</scope>
     </dependency>
+    
+    -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
