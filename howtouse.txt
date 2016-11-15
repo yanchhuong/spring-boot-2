@@ -11,3 +11,8 @@ $ heroku logs -t -app app-name
 $ cat file.sql | heroku pg:psql --app app_name
 $ echo "select * from table;" | heroku pg:psql --app app_name
 $ heroku pg:psql --app app_name < file.sql
+
+
+# connect sql cliend with heroku
+
+http://stackoverflow.com/questions/11769860/connect-to-a-heroku-database-with-pgadmin
