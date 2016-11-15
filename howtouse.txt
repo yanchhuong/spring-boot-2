@@ -26,3 +26,8 @@ If you want list of tables from current pg installation of all databases
 
 SELECT table_schema,table_name FROM information_schema.tables
 ORDER BY table_schema,table_name;
+
+
+# replace spring logo dock
+
+<link rel="icon" type="image/png" href="images/fav.png">
