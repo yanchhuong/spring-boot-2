@@ -22,9 +22,12 @@ public class RecordController{
      }
 	  @RequestMapping(value="/delete", method=RequestMethod.POST)
 	  public String DeleteCustomer(HttpServletRequest request) {
-		  Long id = Long.valueOf(request.getParameter("id"));
+		//  Long id = Long.valueOf(request.getParameter("id"));
+		  System.out.println("Test==========================");
 		  recordServiceImpl.delete(1);	                 
 	      return "Delete sucess!";
+	      
+	      
 	  }
 	  
 	  @RequestMapping(value="/loadall", method=RequestMethod.GET)
