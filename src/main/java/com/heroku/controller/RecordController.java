@@ -20,7 +20,7 @@ public class RecordController{
      public RecordController(RecordServiceImpl recordServiceImpl){
     	 this.recordServiceImpl = recordServiceImpl;
      }
-	  @RequestMapping(value="/delete", method=RequestMethod.POST)
+	  @RequestMapping(value="/delete", method=RequestMethod.GET)
 	  public String DeleteCustomer(HttpServletRequest request) {
 		//  Long id = Long.valueOf(request.getParameter("id"));
 		  System.out.println("Test==========================");
