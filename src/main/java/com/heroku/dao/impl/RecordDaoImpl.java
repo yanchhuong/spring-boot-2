@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
-
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import com.heroku.dao.RecordDao;
 import com.heroku.demo.Record;
-
 
 @Repository
 public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
@@ -36,17 +34,16 @@ public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
 		
 	}
 
-	
 	@Override
 	public List<Record> loadAll(){
-	    String sql = "SELECT * FROM record";
+	    String sql = "SELECT data FROM record";
 	    List< Map < String, Object>> rows = this.getJdbcTemplate().queryForList(sql);
 	 
 	    List<Record> result = new ArrayList<Record>();
 	    for(Map <String, Object> row:rows){
-	    	Record cus = new Record();
-	        cus.setData((String)row.get("data"));
-	        result.add(cus);
+	    	Record rec = new Record();
+	        rec.setData((String)row.get("data"));
+	        result.add(rec);
 	    }
 	    return result;
 	}
