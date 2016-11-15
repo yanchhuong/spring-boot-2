@@ -27,9 +27,9 @@ public class RecordController{
 	      return "Delete sucess!";
 	  }
 	  
-	  @RequestMapping(value="/loadall", method=RequestMethod.GET)
+	/*  @RequestMapping(value="/loadall", method=RequestMethod.GET)
       public List<Record> list(HttpServletRequest request){
 			 return recordServiceImpl.showAll();
-	  }
+	  }*/
 	  
 }
