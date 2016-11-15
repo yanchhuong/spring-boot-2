@@ -44,7 +44,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @Espark @copyright all right reserve
  */
 @SpringBootApplication
-@ComponentScan("com.code")
+@ComponentScan("com.heroku")
 public class WebMvcJspApplication extends SpringBootServletInitializer {
 	private static  Logger LOGGER =  LoggerFactory.getLogger(WebMvcJspApplication.class);
 
@@ -57,7 +57,7 @@ public class WebMvcJspApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) throws Exception {
 		LOGGER.info("Starting Main Application...");
 		SpringApplication.run(WebMvcJspApplication.class, args);
-		 LOGGER.info("Access URLs: http://localhost:8080\n");
+		
 	}
 
 }
