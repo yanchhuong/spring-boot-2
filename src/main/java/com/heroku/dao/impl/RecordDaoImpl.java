@@ -9,11 +9,13 @@ import javax.annotation.PostConstruct;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
-
+import org.springframework.stereotype.Repository;
 
 import com.heroku.dao.RecordDao;
 import com.heroku.demo.Record;
 
+
+@Repository
 public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
 
 	

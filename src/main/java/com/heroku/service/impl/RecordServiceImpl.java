@@ -3,11 +3,12 @@ package com.heroku.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.heroku.dao.RecordDao;
 import com.heroku.demo.Record;
 import com.heroku.service.RecordService;
-
+@Service
 public class RecordServiceImpl implements RecordService{
 	 @Autowired RecordDao recordDao;
 	@Override
