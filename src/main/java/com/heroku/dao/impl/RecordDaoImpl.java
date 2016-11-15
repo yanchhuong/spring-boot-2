@@ -34,7 +34,7 @@ public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
 
 	@Override
 	public List<Record> loadAll(){
-	    String sql = "SELECT data FROM record";
+	    String sql = "SELECT id,data FROM record";
 	    List< Map < String, Object>> rows = this.getJdbcTemplate().queryForList(sql);
 	 
 	    List<Record> result = new ArrayList<Record>();
