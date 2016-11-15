@@ -44,7 +44,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @Espark @copyright all right reserve
  */
 @SpringBootApplication
-@ComponentScan("com.code")
+@ComponentScan("com.heroku")
 public class WebMvcJspApplication extends SpringBootServletInitializer {
 	private static  Logger LOGGER =  LoggerFactory.getLogger(WebMvcJspApplication.class);
 
