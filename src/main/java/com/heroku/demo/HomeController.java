@@ -15,6 +15,7 @@
  */
 package com.heroku.demo;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/")
@@ -54,5 +56,12 @@ public class HomeController {
             repository.save(record);
         }
         return home(model);
+    }
+    @ResponseBody
+    @RequestMapping(value="/loadall", method=RequestMethod.GET)
+  //  public  List<Record> list(HttpServletRequest request){
+    public String list(){
+			 //return recordServiceImpl.showAll();
+    	return "test";
     }
 }
