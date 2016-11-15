@@ -15,11 +15,9 @@ import com.heroku.demo.Record;
 
 @Repository
 public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
-
-	
-	 @Autowired
-	 DataSource dataSource;
-	  
+	@Autowired
+	protected DataSource dataSource;
+	 
 	 @PostConstruct
 	 private void initialize(){
 	        setDataSource(dataSource);
