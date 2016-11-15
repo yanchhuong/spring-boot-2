@@ -48,7 +48,6 @@ import org.springframework.context.annotation.ComponentScan;
 public class WebMvcJspApplication extends SpringBootServletInitializer {
 	private static  Logger LOGGER =  LoggerFactory.getLogger(WebMvcJspApplication.class);
 
-
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(WebMvcJspApplication.class);
