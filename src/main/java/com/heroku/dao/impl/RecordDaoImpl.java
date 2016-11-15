@@ -40,6 +40,7 @@ public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
 	    List<Record> result = new ArrayList<Record>();
 	    for(Map <String, Object> row:rows){
 	    	Record rec = new Record();
+	    	rec.setId((Long)row.get("id"));
 	        rec.setData((String)row.get("data"));
 	        result.add(rec);
 	    }

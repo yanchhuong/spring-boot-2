@@ -19,6 +19,9 @@ public class Record {
     public String getData() {
         return data;
     }
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public void setData(String data) {
         this.data = data;
