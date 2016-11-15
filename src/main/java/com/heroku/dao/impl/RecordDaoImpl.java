@@ -31,7 +31,6 @@ public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
 		System.out.println(id); 
 		
 	}
-
 	@Override
 	public List<Record> loadAll(){
 	    String sql = "SELECT id,data FROM record";

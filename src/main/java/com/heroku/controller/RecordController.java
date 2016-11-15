@@ -49,7 +49,7 @@ public class RecordController{
 	  public String DeleteCustomer(HttpServletRequest request) {
 		//  Long id = Long.valueOf(request.getParameter("id"));
 		  System.out.println("Test==========================");
-		  recordServiceImpl.delete(1);	                 
+		  recordServiceImpl.delete(2);	                 
 	      return "Delete sucess!";
 	      
 	      
