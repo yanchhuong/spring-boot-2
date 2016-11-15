@@ -57,11 +57,5 @@ public class HomeController {
         }
         return home(model);
     }
-    @ResponseBody
-    @RequestMapping(value="/loadall", method=RequestMethod.GET)
-  //  public  List<Record> list(HttpServletRequest request){
-    public String list(){
-			 //return recordServiceImpl.showAll();
-    	return "test";
-    }
+   
 }

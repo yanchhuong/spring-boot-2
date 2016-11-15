@@ -45,13 +45,13 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan("com.heroku")
-public class WebMvcJspApplication extends SpringBootServletInitializer {
+public class WebMvcJspApplication /*extends SpringBootServletInitializer*/ {
 	private static  Logger LOGGER =  LoggerFactory.getLogger(WebMvcJspApplication.class);
 
-	@Override
+	/*@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(WebMvcJspApplication.class);
-	}
+	}*/
 
 	public static void main(String[] args) throws Exception {
 		LOGGER.info("Starting Main Application...");

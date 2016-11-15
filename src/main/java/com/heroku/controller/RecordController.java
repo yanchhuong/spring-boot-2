@@ -12,6 +12,7 @@ import com.heroku.demo.Record;
 import com.heroku.service.impl.RecordServiceImpl;
 
 @RestController
+@RequestMapping("/records")
 public class RecordController{
 	 private RecordServiceImpl recordServiceImpl;
 
@@ -19,7 +20,6 @@ public class RecordController{
      public RecordController(RecordServiceImpl recordServiceImpl){
     	 this.recordServiceImpl = recordServiceImpl;
      }
-
 	  @RequestMapping(value="/delete", method=RequestMethod.POST)
 	  public String DeleteCustomer(HttpServletRequest request) {
 		  Long id = Long.valueOf(request.getParameter("id"));
@@ -27,9 +27,9 @@ public class RecordController{
 	      return "Delete sucess!";
 	  }
 	  
-	/*  @RequestMapping(value="/loadall", method=RequestMethod.GET)
+	  @RequestMapping(value="/loadall", method=RequestMethod.GET)
       public List<Record> list(HttpServletRequest request){
 			 return recordServiceImpl.showAll();
-	  }*/
+	  }
 	  
 }
