@@ -39,7 +39,7 @@ public class RecordController{
 	                          @ModelAttribute("insertRecord") @Valid Record record,
 	                             BindingResult result) {
 	        if (!result.hasErrors()) {
-	         //   repository.save(record);
+	           recordServiceImpl.insertRecord(record);
 	        }
 	        return home(model);
 	  }
@@ -54,7 +54,7 @@ public class RecordController{
 	      
 	      
 	  }
-	  
+
 	  @RequestMapping(value="/loadall", method=RequestMethod.GET)
 	  @ResponseBody
       public List<Record> list(HttpServletRequest request){

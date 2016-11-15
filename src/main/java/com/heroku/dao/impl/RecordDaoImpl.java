@@ -45,5 +45,12 @@ public class RecordDaoImpl extends JdbcDaoSupport implements RecordDao{
 	    }
 	    return result;
 	}
+
+	@Override
+	public void insertRecord(Record rec) {
+		String sql = "INSERT INTO record " +"(data) VALUES (?)" ;
+        this.getJdbcTemplate().update(sql, new Object[]{rec.getData()});
+		
+	}
 	
 }

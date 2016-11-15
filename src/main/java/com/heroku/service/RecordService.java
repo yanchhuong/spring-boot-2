@@ -8,4 +8,5 @@ public interface RecordService {
 
 	List<Record> showAll();
 	void delete(long id);
+	void insertRecord(Record rec);
 }

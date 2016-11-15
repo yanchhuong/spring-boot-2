@@ -21,4 +21,9 @@ public class RecordServiceImpl implements RecordService{
 		return recordDao.loadAll();
 		
 	}
+	@Override
+	public void insertRecord(Record rec) {
+		recordDao.insertRecord(rec);
+		
+	}
 }
