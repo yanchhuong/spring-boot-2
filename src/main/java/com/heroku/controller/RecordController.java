@@ -51,8 +51,7 @@ public class RecordController{
 		  System.out.println("Test==========================");
 		  recordServiceImpl.delete(2);	                 
 	      return "Delete sucess!";
-	      
-	      
+	       
 	  }
 
 	  @RequestMapping(value="/loadall", method=RequestMethod.GET)
