@@ -22,12 +22,18 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.Banner;
 
 
 @SpringBootApplication
 @ComponentScan("com.heroku")
 public class Application extends SpringBootServletInitializer{
+	private static  Logger LOGGER =  LoggerFactory.getLogger(Application.class);
+
+
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -36,9 +42,13 @@ public class Application extends SpringBootServletInitializer{
 
     public static void main(String[] args) {
       //  SpringApplication.run(Application.class, args);
+    	 LOGGER.info("Start to Access URLs:HEROKU.......");
         SpringApplication app = new SpringApplication(Application.class);
         app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
+        
+        
+        LOGGER.info("Finish Access URLs:HEROKU");
     }
 
 }
