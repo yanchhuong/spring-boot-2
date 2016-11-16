@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="<c:url value="css/app.css" />" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/css/app.css">
 <title>Spring Security Example</title>
 
 <script type="text/javascript">
@@ -30,8 +30,6 @@
 		<a href="https://github.com/priyadb/SpringSecurityJdbcApp/archive/master.zip"
 			class="button red small">Download</a>
 	</div>
-	
-
 
 <div id="status">
 </div>
