@@ -31,7 +31,7 @@ public class RecordController{
 	 List<Record> records = recordServiceImpl.showAll();
 	        model.addAttribute("records", records);
 	        model.addAttribute("insertRecord", new Record());
-	        return "views/login";
+	        return "login";
 	 }
 
 	 @RequestMapping(method = RequestMethod.POST)
