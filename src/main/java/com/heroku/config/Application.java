@@ -44,7 +44,7 @@ public class Application extends SpringBootServletInitializer{
       //  SpringApplication.run(Application.class, args);
     	 LOGGER.info("Start to Access URLs:HEROKU.......");
         SpringApplication app = new SpringApplication(Application.class);
-        app.setBannerMode(Banner.Mode.OFF);
+      //  app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
         
         
