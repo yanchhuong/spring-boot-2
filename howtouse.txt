@@ -31,3 +31,9 @@ ORDER BY table_schema,table_name;
 # replace spring logo dock
 
 <link rel="icon" type="image/png" href="images/fav.png">
+
+
+
+#  how to get username after login
+
+ final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();

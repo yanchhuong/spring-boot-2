@@ -25,7 +25,7 @@ public class LoginController  {
 	public String home(
 			ModelMap model,HttpServletRequest request,RedirectAttributes redir) {
 		final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
-		final String obj = 	SecurityContextHolder.getContext().getAuthentication().getDetails().toString();
+		final String obj = 	SecurityContextHolder.getContext().getAuthentication().getCredentials().toString();
 	
 		
 		System.out.println(currentUser + "++++++"   +obj);
