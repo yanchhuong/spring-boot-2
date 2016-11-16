@@ -24,11 +24,11 @@ public class LoginController  {
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String home(
 			ModelMap model,HttpServletRequest request,RedirectAttributes redir) {
-		final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+
 		final String obj = 	SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
 	
 		
-		System.out.println(currentUser + "++++++"   +obj);
+		System.out.println( "++++++"   +obj);
 		return "home";
 	}
 	@RequestMapping(value = "/hello",method = RequestMethod.GET)
