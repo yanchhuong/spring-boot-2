@@ -14,8 +14,8 @@
         target.value= "";
     }
 </script>
- <script src="js-lib/jquery-1.7.2.min.js"></script> 
- <script src="js/login.js"></script> 
+ <script src="/js/jquery-1.7.2.min.js"></script> 
+ <script src="/js/login.js"></script> 
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 
 <meta name="_csrf" content="${_csrf.token}"/>
