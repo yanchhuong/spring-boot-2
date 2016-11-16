@@ -3,19 +3,9 @@
 --DROP TABLE IF EXISTS customer ;
 
 
-CREATE SEQUENCE if NOT EXISTS user_id_seq;
-CREATE SEQUENCE if NOT EXISTS customer_id_seq;
-
-CREATE TABLE if NOT EXISTS customer (
-    id bigserial NOT NULL DEFAULT nextval('customer_id_seq'),
-    firstname varchar(100) NOT NULL,
-    lastname varchar(100) NOT NULL
-);
-ALTER SEQUENCE customer_id_seq OWNED BY customer.id;
-
 
 --DROP SEQUENCE if EXISTS user_id_seq;
---DROP TABLE IF EXISTS users;
+--DROP TABLE IF EXISTS user_details;
 
  --CREATE TABLE IF NOT EXISTS users (
 --     id smallint NOT NULL DEFAULT nextval('user_id_seq'),
@@ -37,27 +27,25 @@ ALTER SEQUENCE customer_id_seq OWNED BY customer.id;
 
 --DROP TABLE IF EXISTS users;
 CREATE  TABLE IF NOT EXISTS users(
+  id SERIAL,
   username VARCHAR(45) NOT NULL ,
   password VARCHAR(45) NOT NULL ,
+  email VARCHAR(45) Not null,
   enabled boolean NOT NULL DEFAULT true ,
   PRIMARY KEY (username));
   
+  
 --DROP TABLE IF EXISTS user_roles; 
 
- CREATE SEQUENCE if NOT EXISTS id_seq;
  CREATE TABLE if not EXISTS user_roles (
-  user_role_id smallint NOT NULL DEFAULT nextval('id_seq'),
+  user_role_id SERIAL,
   username varchar(45) NOT NULL,
   role varchar(45) NOT NULL,
   PRIMARY KEY (user_role_id)
- 
   );
-  ALTER SEQUENCE id_seq OWNED BY user_roles.user_role_id;
   
-  
-  
---INSERT INTO users(username,password,enabled)
---VALUES ('user','user', true);
+INSERT INTO users(username,password,email,enabled)
+VALUES ('user','user','yanchhuong@yahoo.com', true);
 --INSERT INTO users(username,password,enabled)
 --VALUES ('admin','admin', true);
 
