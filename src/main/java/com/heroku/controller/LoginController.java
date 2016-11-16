@@ -1,7 +1,7 @@
 package com.heroku.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -17,12 +17,15 @@ public class LoginController  {
 
 	@RequestMapping(value = "/login",method = RequestMethod.GET)
 	public String showForm(ModelMap model,HttpServletRequest request) {
+		
 		return "login";
 	}
 	
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String home(
 			ModelMap model,HttpServletRequest request,RedirectAttributes redir) {
+		final String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		System.out.println(currentUser);
 		return "home";
 	}
 	@RequestMapping(value = "/hello",method = RequestMethod.GET)
