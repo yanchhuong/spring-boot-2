@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpServletRequest;
 @Controller
 public class LoginController  {
-    @Autowired
 
 	@RequestMapping(value = "/login",method = RequestMethod.GET)
 	public String showForm(ModelMap model,HttpServletRequest request) {
