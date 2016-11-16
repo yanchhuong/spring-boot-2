@@ -2,7 +2,7 @@
 install git CLI  - > open command --> run like bellow
 
 
-$ heroku logs -t -app app-name
+$ heroku logs -t --app app-name
 
 
 
