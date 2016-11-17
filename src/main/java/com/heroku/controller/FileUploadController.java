@@ -1,4 +1,4 @@
-/*package com.heroku.controller;
+package com.heroku.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class FileUploadController {
         this.storageService = storageService;
     }
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String listUploadedFiles(Model model) throws IOException {
 
         model.addAttribute("files", storageService
@@ -42,7 +42,7 @@ public class FileUploadController {
         return "auploadfile";
     }
 
-    @GetMapping("/files/{filename:.+}")
+    @RequestMapping("/files/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
 
@@ -53,7 +53,7 @@ public class FileUploadController {
                 .body(file);
     }
 
-    @PostMapping("/")
+    @RequestMapping("/")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
 
@@ -70,4 +70,3 @@ public class FileUploadController {
     }
 
 }
-*/
