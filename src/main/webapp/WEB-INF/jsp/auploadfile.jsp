@@ -20,6 +20,12 @@
  
  
  <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>File Upload Example using Apache commons File Upload Utility </title>
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+ </head>
 <body>
 
 	<div th:if="${message}">
@@ -32,6 +38,8 @@
 				<tr><td>File to upload:</td><td><input type="file" name="filename" /></td></tr>
 				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
 			</table>
+			<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
 		</form>
 	</div>
 
