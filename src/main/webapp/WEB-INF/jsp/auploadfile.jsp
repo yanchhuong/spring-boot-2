@@ -1,6 +1,3 @@
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <html>
   <head>
     <title>File Upload Example using Apache commons File Upload Utility </title>
@@ -15,13 +12,5 @@
        <input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
     </form>
-    
-    <div>
-		<ul>
-			<li th:each="file : ${files}">
-				<a th:href="${file}" th:text="${file}" />
-			</li>
-		</ul>
-	</div>
   </body>
 </html>
