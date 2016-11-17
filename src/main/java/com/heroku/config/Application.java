@@ -30,10 +30,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 
-
+@ComponentScan("com.heroku")
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)
-@ComponentScan("com.heroku")
+
 public class Application extends SpringBootServletInitializer{
 	private static  Logger LOGGER =  LoggerFactory.getLogger(Application.class);
 
