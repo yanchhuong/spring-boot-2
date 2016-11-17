@@ -53,11 +53,11 @@ public class Application extends SpringBootServletInitializer{
         LOGGER.info("Finish Access URLs:HEROKU");
     }
     
-/*    @Bean
+   @Bean
 	CommandLineRunner init(StorageService storageService) {
 		return (args) -> {
             storageService.deleteAll();
           //  storageService.init();
 		};
-	}*/
+	}
 }
