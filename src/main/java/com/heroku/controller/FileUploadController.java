@@ -54,7 +54,7 @@ public class FileUploadController {
     }
 
     @RequestMapping("/file")
-    public String handleFileUpload(@RequestParam("filename") MultipartFile file,
+    public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
         System.out.print(file.getName());
         storageService.store(file);

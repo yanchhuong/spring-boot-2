@@ -6,9 +6,8 @@
     <meta name="_csrf_header" content="${_csrf.headerName}"/>
   </head>
   <body>
-    <form action="/file" method="post"
-        enctype="multipart/form-data">
-        Select File to Upload:<input type="file" name="fileName"><br>
+    <form action="/file" method="post" enctype="multipart/form-data">
+        Select File to Upload:<input type="file" name="file" id="file"><br>
        <input type="submit" value="Upload">
        <input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
