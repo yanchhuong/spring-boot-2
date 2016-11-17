@@ -8,7 +8,7 @@ public class StorageProperties {
     /**
      * Folder location for storing files
      */
-    private String location = "src/main/resources/templates/img";
+    private String location = "src/main/resources/templates/css";
 
     public String getLocation() {
         return location;
