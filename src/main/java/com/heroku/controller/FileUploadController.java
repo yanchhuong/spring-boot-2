@@ -29,10 +29,8 @@ public class FileUploadController {
     public FileUploadController(StorageService storageService) {
         this.storageService = storageService;
     }
-
     @RequestMapping("/")
     public String listUploadedFiles(Model model) throws IOException {
-
         model.addAttribute("files", storageService
                 .loadAll()
                 .map(path ->
@@ -42,8 +40,6 @@ public class FileUploadController {
                 .collect(Collectors.toList()));
 
         return "auploadfile";
-        
-        
     }
 
     @RequestMapping("/files/{filename:.+}")
@@ -59,15 +55,11 @@ public class FileUploadController {
 
     @RequestMapping("/file")
     public String handleFileUpload(@RequestParam("filename") MultipartFile file,RedirectAttributes redirectAttributes) {
-        System.out.print("########################################## :"+file.getName());
-        
         storageService.store(file);
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file.getOriginalFilename() + "!");
        
         return "redirect:/";
-        
-   
     }
 
     @ExceptionHandler(StorageFileNotFoundException.class)
