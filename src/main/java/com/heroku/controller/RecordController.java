@@ -17,7 +17,7 @@ import com.heroku.demo.Record;
 import com.heroku.service.impl.RecordServiceImpl;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/record")
 public class RecordController{
 	 private RecordServiceImpl recordServiceImpl;
 
