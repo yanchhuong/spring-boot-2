@@ -2,7 +2,7 @@ package com.heroku.model;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties("storage")
+@ConfigurationProperties("com.heroku")
 public class StorageProperties {
 
     /**
