@@ -22,10 +22,6 @@
 		</ul>
 	</div>
 	
-	
-	<img src="**/**/stock-photo-165134775.jpg" alt="Mountain View" style="width:304px;height:228px;">
-	
-	
   </body>
 </html>
 
