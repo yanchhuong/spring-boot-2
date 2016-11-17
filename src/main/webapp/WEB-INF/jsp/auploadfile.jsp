@@ -12,15 +12,6 @@
        <input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
     </form>
-    
-    
-    <div>
-		<ul>
-			<li th:each="file : ${files}">
-				<a th:href="${file}" th:text="${file}" />
-			</li>
-		</ul>
-	</div>
 	
   </body>
 </html>
