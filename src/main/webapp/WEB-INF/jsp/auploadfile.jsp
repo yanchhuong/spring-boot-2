@@ -7,7 +7,7 @@
   </head>
   <body>
     <form action="/file" method="post" enctype="multipart/form-data">
-        Select File to Upload:<input type="file" name="file" id="file"><br>
+        Select File to Upload:<input type="file" name="filename" id="filename"><br>
        <input type="submit" value="Upload">
        <input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
