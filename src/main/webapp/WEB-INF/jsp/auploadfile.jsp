@@ -1,3 +1,6 @@
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
 <html>
   <head>
     <title>File Upload Example using Apache commons File Upload Utility </title>
