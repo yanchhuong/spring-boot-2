@@ -18,18 +18,22 @@ package com.heroku.config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-
-
+import com.heroku.model.StorageProperties;
+import com.heroku.service.StorageService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.Banner;
+import org.springframework.boot.CommandLineRunner;
 
-
-@SpringBootApplication
 @ComponentScan("com.heroku")
+@SpringBootApplication
+@EnableConfigurationProperties(StorageProperties.class)
+
 public class Application extends SpringBootServletInitializer{
 	private static  Logger LOGGER =  LoggerFactory.getLogger(Application.class);
 
@@ -45,10 +49,15 @@ public class Application extends SpringBootServletInitializer{
     	 LOGGER.info("Start to Access URLs:HEROKU.......");
         SpringApplication app = new SpringApplication(Application.class);
       //  app.setBannerMode(Banner.Mode.OFF);
-        app.run(args);
-        
-        
+        app.run(args);   
         LOGGER.info("Finish Access URLs:HEROKU");
     }
-
+    
+   @Bean
+	CommandLineRunner init(StorageService storageService) {
+		return (args) -> {
+            storageService.deleteAll();
+            storageService.init();
+		};
+	}
 }
