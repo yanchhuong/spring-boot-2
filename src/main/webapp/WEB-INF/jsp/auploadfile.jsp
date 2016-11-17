@@ -12,5 +12,20 @@
        <input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
     </form>
+    
+    
+    <div>
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file}" />
+			</li>
+		</ul>
+	</div>
+	
+	
+	<img src="**/**/stock-photo-165134775.jpg" alt="Mountain View" style="width:304px;height:228px;">
+	
+	
   </body>
 </html>
+
