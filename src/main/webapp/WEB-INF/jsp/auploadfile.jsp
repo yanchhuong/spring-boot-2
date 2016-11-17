@@ -6,7 +6,7 @@
     <meta name="_csrf_header" content="${_csrf.headerName}"/>
   </head>
   <body>
-    <form action="/" method="post"
+    <form action="/file" method="post"
         enctype="multipart/form-data">
         Select File to Upload:<input type="file" name="fileName"><br>
        <input type="submit" value="Upload">
