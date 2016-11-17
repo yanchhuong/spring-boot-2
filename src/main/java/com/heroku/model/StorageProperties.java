@@ -8,7 +8,11 @@ public class StorageProperties {
     /**
      * Folder location for storing files
      */
-    private String location = "src/main/resources/templates/img";
+//  /  private String location = "src/main/resources/templates/img";
+    
+    private String location = System.getProperty("catalina.home");
+
+    
 
     public String getLocation() {
         return location;
