@@ -15,9 +15,10 @@ function ft_UPLOAD_FILE(e){
 	
     e.preventDefault();
     var formData = new FormData($(this).parents('form')[0]);
-
+    console.log(formData);
+    alert(formData);
     $.ajax({
-        url: '/file',
+       // url: '/file',
         type: 'POST',
         xhr: function() {
             var myXhr = $.ajaxSettings.xhr();
