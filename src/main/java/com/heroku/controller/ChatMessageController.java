@@ -23,7 +23,7 @@ import java.util.List;
 @Controller
 public class ChatMessageController {
  
-    @Autowired
+   /* @Autowired*/
     ChatMessageRepository chatMessageRepository;
  
     @RequestMapping("/loginchat")
