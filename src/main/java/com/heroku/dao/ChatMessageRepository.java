@@ -13,5 +13,5 @@ import com.heroku.model.ChatMessageModel;
  * @author huseyinbabal
  */
 public interface ChatMessageRepository extends CrudRepository<ChatMessageModel, String>,JpaSpecificationExecutor<ChatMessageModel> {
-    List<ChatMessageModel> findAllByOrderByCreateDateAsc();
+    List<ChatMessageModel> findAll();
 }

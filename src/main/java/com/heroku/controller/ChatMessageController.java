@@ -49,7 +49,7 @@ public class ChatMessageController {
     @RequestMapping(value = "/messages", method = RequestMethod.GET)
     public HttpEntity list() {
     /*    List<ChatMessageModel> chatMessageModelList = chatMessageRepository.findAll(new PageRequest(0, 5, Sort.Direction.DESC, "createDate")).getContent();*/
-    	List<ChatMessageModel> chatMessageModelList = chatMessageRepository.findAllByOrderByCreateDateAsc();
+    	List<ChatMessageModel> chatMessageModelList = chatMessageRepository.findAll();
     	return new ResponseEntity(chatMessageModelList, HttpStatus.OK);
     }
 }
