@@ -44,7 +44,7 @@
 				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
 				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
 				
-				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+				<tr><td></td><td><input type="submit" id="upload_submit" value="Upload" /></td></tr>
 			</table>
 			<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />

@@ -2,7 +2,7 @@ var _this;
 $(document).ready(function(){
 
     
-    $("#upload_file").click( "click", function() {
+    $("#upload_submit").click( "click", function() {
 	  alert();
 	  ft_UPLOAD_FILE();
    });
@@ -16,11 +16,13 @@ function ft_UPLOAD_FILE(){
 	var input={};
 	
 	var filedata = document.getElementByName("file");
+	
     formdata = new FormData();
     var i = 0, len = filedata.files.length, file;
      for (i; i < len; i++) {
         file = filedata.files[i];
         formdata.append("file[]", file);
+        console.log(filedata.files[i]);
     }
     formdata.append("json",true);
     
