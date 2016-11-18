@@ -12,7 +12,7 @@ $(document).ready(function(){
 function ft_UPLOAD_FILE(e){
 	var csrfHeader = $("meta[name='_csrf_header']").attr("content");
 	var csrfToken = $("meta[name='_csrf']").attr("content")
-	
+/*	
     e.preventDefault();
     var formData = new FormData($(this).parents('form')[0]);
     console.log(formData);
@@ -33,7 +33,7 @@ function ft_UPLOAD_FILE(e){
         processData: false
     });
     return false;
-    
+    */
 	/*  $.ajax({
 	    	type   : 'POST',
 	    	url    : "/file",
