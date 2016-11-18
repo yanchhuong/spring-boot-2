@@ -18,7 +18,7 @@ function ft_UPLOAD_FILE(e){
     console.log(formData);
     alert(formData);
     $.ajax({
-       // url: '/file',
+        url: '/file',
         type: 'POST',
         xhr: function() {
             var myXhr = $.ajaxSettings.xhr();

@@ -38,7 +38,8 @@
 	</div>
 
 	<div>
-		<form method="POST" enctype="multipart/form-data" id="upload_file">
+		<!-- <form method="POST" enctype="multipart/form-data" id="upload_file"> -->
+		<form>
 			<table>
 				<tr><td>File to upload:</td><td><input type="file" name="file" id="file"/></td></tr>
 				<!-- <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
