@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.heroku.service.StorageService;
 import com.heroku.service.impl.StorageFileNotFoundException;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.stream.Collectors;
 
@@ -57,19 +58,14 @@ public class FileUploadController {
     @RequestMapping("/file")
     public String handleFileUpload(@RequestParam("file") MultipartFile[] file,
                                    RedirectAttributes redirectAttributes) {
-
     	for (int i = 0; i < file.length; i++) {
     		storageService.store(file[i]);
     	}
-    	System.out.println("############## :"+file[0].getName());
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file[0].getOriginalFilename() + "!");
 
         return "redirect:/";
-        
-
     }
-
     @ExceptionHandler(StorageFileNotFoundException.class)
     public ResponseEntity handleStorageFileNotFound(StorageFileNotFoundException exc) {
         return ResponseEntity.notFound().build();

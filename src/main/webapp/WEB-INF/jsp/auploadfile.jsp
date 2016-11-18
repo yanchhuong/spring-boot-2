@@ -21,6 +21,11 @@
  
  <html xmlns:th="http://www.thymeleaf.org">
 <head>
+
+    <script src="/js/jquery-1.7.2.min.js"></script> 
+   
+    <script src="/js-lib/upload_file.js"></script>
+
     <title>File Upload Example using Apache commons File Upload Utility </title>
     <meta name="_csrf" content="${_csrf.token}"/>
     <!-- default header name is X-CSRF-TOKEN -->
@@ -33,7 +38,7 @@
 	</div>
 
 	<div>
-		<form method="POST" enctype="multipart/form-data" action="/file">
+		<form method="POST" enctype="multipart/form-data" action="/file" id="upload_file">
 			<table>
 				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
 				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
@@ -58,3 +63,48 @@
 
 </body>
 </html>
+
+
+<script>
+function OnProgress(event, position, total, percentComplete){    
+    //Progress bar
+    console.log(total);
+    $('#pb').width(percentComplete + '%') //update progressbar percent complete
+    $('#pt').html(percentComplete + '%'); //update status text
+}
+function beforeSubmit(){
+    console.log('ajax start');
+}
+function afterSuccess(data){
+    console.log(data);
+}
+$(document).ready(function(e) {
+    $('#upload_file').submit(function(event){
+        event.preventDefault();
+        var filedata = document.getElementById("file");
+        formdata = new FormData();
+        var i = 0, len = filedata.files.length, file;
+         for (i; i < len; i++) {
+            file = filedata.files[i];
+            formdata.append("file[]", file);
+        }
+        formdata.append("json",true);
+        $.ajax({
+            url: "/file",
+            type: "POST",
+            data: formdata,
+            processData: false,
+            contentType: false,
+            dataType:"JSON",
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            beforeSubmit: beforeSubmit,
+            uploadProgress:OnProgress, 
+            success: afterSuccess,
+            resetForm: true
+        });
+    });
+});
+</script>
