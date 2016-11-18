@@ -50,6 +50,8 @@
 			</li>
 		</ul>
 	</div>
+	
+	<img src="https://spring-boot-3.herokuapp.com/files/stock-photo-162224091.jpg" alt="Mountain View" style="width:304px;height:228px;">
 
 </body>
 </html>
