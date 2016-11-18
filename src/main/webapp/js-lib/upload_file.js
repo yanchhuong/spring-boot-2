@@ -15,7 +15,7 @@ function ft_UPLOAD_FILE(){
 	
 	var input={};
 	
-	var filedata = $("#file").text;
+	var filedata = $("#file").val;
 	
     formdata = new FormData();
     var i = 0, len = filedata.files.length, file;
