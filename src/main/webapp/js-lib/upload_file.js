@@ -26,7 +26,7 @@ function ft_UPLOAD_FILE(){
     }
     formdata.append("json",true);
     
-	  $.ajax({
+	/*  $.ajax({
 	    	type   : 'POST',
 	    	url    : "/file",
 	    	cache: false,
@@ -39,5 +39,5 @@ function ft_UPLOAD_FILE(){
 	    	success :function(result){
 	    	   alert(result);
 	    	 }
-		   })
+		   })*/
 }
