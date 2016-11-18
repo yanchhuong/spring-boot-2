@@ -24,7 +24,7 @@ import java.util.List;
 public class ChatMessageController {
  
     @Autowired
-    private ChatMessageRepository chatMessageRepository;
+    ChatMessageRepository chatMessageRepository;
  
     @RequestMapping("/loginchat")
     public String login() {
