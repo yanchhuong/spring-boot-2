@@ -1,6 +1,7 @@
 package com.heroku.controller;
 
 
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -59,8 +60,8 @@ public class FileUploadController {
 
     	for (int i = 0; i < file.length; i++) {
     		storageService.store(file[i]);
-    		
     	}
+    	System.out.println("############## :"+file[0].getName());
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file[0].getOriginalFilename() + "!");
 
