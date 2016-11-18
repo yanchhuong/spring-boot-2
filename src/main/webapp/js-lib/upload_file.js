@@ -9,22 +9,29 @@ $(document).ready(function(){
 	 
 })
 
-function ft_UPLOAD_FILE(){
+function ft_UPLOAD_FILE(e){
 	var csrfHeader = $("meta[name='_csrf_header']").attr("content");
 	var csrfToken = $("meta[name='_csrf']").attr("content")
 	
-	var input={};
-	
-	var filedata = $("#file").val;
-	
-    formdata = new FormData();
-    var i = 0, len = filedata.files.length, file;
-     for (i; i < len; i++) {
-        file = filedata.files[i];
-        formdata.append("file[]", file);
-        console.log(filedata.files[i]);
-    }
-    formdata.append("json",true);
+    e.preventDefault();
+    var formData = new FormData($(this).parents('form')[0]);
+
+    $.ajax({
+        url: '/file',
+        type: 'POST',
+        xhr: function() {
+            var myXhr = $.ajaxSettings.xhr();
+            return myXhr;
+        },
+        success: function (data) {
+            alert("Data Uploaded: "+data);
+        },
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+    return false;
     
 	/*  $.ajax({
 	    	type   : 'POST',
