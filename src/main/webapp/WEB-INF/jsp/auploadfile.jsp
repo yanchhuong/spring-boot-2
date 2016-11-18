@@ -40,9 +40,9 @@
 	<div>
 		<form method="POST" enctype="multipart/form-data" action="/file" id="upload_file">
 			<table>
-				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td>File to upload:</td><td><input type="file" name="file" id="file"/></td></tr>
+				<!-- <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr> -->
 				
 				<tr><td></td><td><input type="submit" id="upload_submit" value="Upload" /></td></tr>
 			</table>
