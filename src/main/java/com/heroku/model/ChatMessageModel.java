@@ -4,6 +4,7 @@ package com.heroku.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
  
@@ -16,22 +17,24 @@ import javax.persistence.Table;
 @Table(name = "chatmessage")
 public class ChatMessageModel {
  
-
+    @Column(name = "id")
     private String id;
- 
+    @Column(name = "text")
     private String text;
+    @Column(name = "author")
     private String author;
-    private Date createDate;
+    @Column(name = "date")
+    private Date date;
  
     public ChatMessageModel() {
     }
  
-    public ChatMessageModel(String text, String author, Date createDate) {
+    public ChatMessageModel(String text, String author, Date date) {
         this.text = text;
         this.author = author;
-        this.createDate = createDate;
+        this.date = date;
     }
- 
+
     public String getText() {
         return text;
     }
@@ -49,11 +52,11 @@ public class ChatMessageModel {
     }
  
     public Date getCreateDate() {
-        return createDate;
+        return date;
     }
  
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setCreateDate(Date date) {
+        this.date = date;
     }
  
     @Override
@@ -62,7 +65,7 @@ public class ChatMessageModel {
                 "\"id\":\"" + id + '\"' +
                 ",\"text\":\"" + text + '\"' +
                 ",\"author\":\"" + author + '\"' +
-                ",\"createDate\":\"" + createDate + "\"" +
+                ",\"date\":\"" + date + "\"" +
                 '}';
     }
 }
