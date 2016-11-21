@@ -12,6 +12,10 @@ import com.heroku.model.ChatMessageModel;
 /**
  * @author huseyinbabal
  */
-public interface ChatMessageRepository extends CrudRepository<ChatMessageModel, String>,JpaSpecificationExecutor<ChatMessageModel> {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ChatMessageRepository extends JpaRepository<ChatMessageModel, String>,JpaSpecificationExecutor<ChatMessageModel> {
     List<ChatMessageModel> findAll();
 }
