@@ -1,15 +1,13 @@
-package com.heroku.dao;
+package com.heroku.service;
 
 import java.util.List;
 
-
 import com.heroku.model.ChatMessageModel;
 
+public interface ChatService {
 
- 
-public interface ChatMessageRepository {
 	void insertChat(ChatMessageModel rec);
 	void deletebyId (long id);
-	List<ChatMessageModel> loadAll();
-    
+	List<ChatMessageModel> ListChat();
+
 }
