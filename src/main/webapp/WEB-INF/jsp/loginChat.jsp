@@ -6,6 +6,10 @@
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
     <script>
         $(function(){
             if ($.cookie("realtime-chat-nickname")) {
@@ -40,6 +44,8 @@
                             </div>
                             <button type="submit" class="btn btn-lg btn-success btn-block">Enter Chat</button>
                         </fieldset>
+                        
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </form>
                 </div>
             </div>

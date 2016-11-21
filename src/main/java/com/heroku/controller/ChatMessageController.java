@@ -27,10 +27,10 @@ public class ChatMessageController {
    /* @Autowired*/
     ChatService chatService;
  
-    @RequestMapping("/loginchat")
+/*    @RequestMapping("/loginchat")
     public String login() {
         return "loginChat";
-    }
+    }*/
  
     @RequestMapping("/chatform")
     public String chat() {

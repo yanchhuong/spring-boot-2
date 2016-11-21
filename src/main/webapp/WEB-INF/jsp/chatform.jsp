@@ -9,6 +9,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.0/sockjs.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
  
     <script>
         var stompClient = null;
@@ -106,6 +109,9 @@
                                     <span class="input-group-btn">
                                         <button class="btn btn-info" type="button" id="sendMessage">SEND <span class="glyphicon glyphicon-send"></span></button>
                                     </span>
+                                    
+                                    
+                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />            
                     </div>
                 </div>
             </div>
