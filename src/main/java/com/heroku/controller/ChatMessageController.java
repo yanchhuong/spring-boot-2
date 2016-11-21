@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.heroku.model.ChatMessageModel;
 import com.heroku.dao.ChatMessageRepository;
- 
+import com.heroku.demo.RecordRepository;
+
 import java.util.Date;
 import java.util.List;
  
@@ -24,7 +25,11 @@ import java.util.List;
 public class ChatMessageController {
  
    /* @Autowired*/
-    ChatMessageRepository chatMessageRepository;
+	RecordRepository chatMessageRepository;
+	@Autowired
+	ChatMessageController(RecordRepository repository){
+		 this.chatMessageRepository = repository;
+	}
  
     @RequestMapping("/loginchat")
     public String login() {
