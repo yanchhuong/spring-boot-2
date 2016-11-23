@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 
 				// control by log in for page
-				.antMatchers("/chat")
+				.antMatchers("/")
 				.access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')")
 
 				.antMatchers("/users").access("hasRole('ROLE_ADMIN')")
