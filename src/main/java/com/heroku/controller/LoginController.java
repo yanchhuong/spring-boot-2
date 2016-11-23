@@ -36,9 +36,9 @@ public class LoginController  {
 			ModelMap model,HttpServletRequest request,RedirectAttributes redir) {
 		return "hello";
 	}
-	@RequestMapping(value = "/403",method = RequestMethod.GET)
+	@RequestMapping(value = "/",method = RequestMethod.GET)
 	public String error(
 			ModelMap model,HttpServletRequest request,RedirectAttributes redir) {
-		return "403";
+		return "index";
 	}
 }
