@@ -2,10 +2,10 @@
 <html>
 <head>
 <title>Chat</title>
-<script src="sockjs-0.3.4.js"></script>
-<script src="stomp.js"></script>
-<script src="jquery-2.1.0.min.js"></script>
-<link href="chat.css" rel="stylesheet" type="text/css">
+<script src="/js-lib/sockjs-0.3.4.js"></script>
+<script src="/js-lib/stomp.js"></script>
+<script src="/js-lib/jquery-2.1.0.min.js"></script>
+<link href="/css/chat.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div>
