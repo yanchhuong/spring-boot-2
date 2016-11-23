@@ -28,11 +28,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 
 				// control by log in for page
-				.antMatchers("/hello")
+				.antMatchers("/chat")
 				.access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')")
 
-				.antMatchers("/users").access("hasRole('ROLE_ADMIN')").antMatchers("/users/add")
-				.access("hasRole('ROLE_ADMIN')").antMatchers("/users/**/update").access("hasRole('ROLE_ADMIN')")
+				.antMatchers("/users").access("hasRole('ROLE_ADMIN')")
+				.antMatchers("/users/add").access("hasRole('ROLE_ADMIN')")
+				.antMatchers("/users/**/update").access("hasRole('ROLE_ADMIN')")
 				.antMatchers("/users/**/delete").access("hasRole('ROLE_ADMIN')")
 
 				.anyRequest().permitAll()
