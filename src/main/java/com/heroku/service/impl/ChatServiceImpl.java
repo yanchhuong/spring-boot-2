@@ -14,22 +14,17 @@ import com.heroku.service.ChatService;
 public class ChatServiceImpl  implements ChatService{
 	@Autowired ChatMessageRepository chatMessageRepository ;
 	
+
 	@Override
-	public void insertChat(ChatMessageModel rec) {
-		chatMessageRepository.insertChat(rec);
-		
+	public List<ChatMessageModel> getMessages(int messageIndex) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public void deletebyId(long id) {
+	public void addMessage(String ChatMessageModel) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public List<ChatMessageModel> ListChat() {
-		// TODO Auto-generated method stub
-		return chatMessageRepository.loadAll();
 	}
 
 	

@@ -1,56 +1,74 @@
 package com.heroku.controller;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import com.heroku.model.ChatMessageModel;
-import com.heroku.service.ChatService;
-import com.heroku.dao.ChatMessageRepository;
- 
-import java.util.Date;
+
+
+import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
- 
-/**
- * @author huseyinbabal
- */
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import org.springframework.messaging.simp.annotation.SendToUser;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Controller;
+
+import com.heroku.model.Chat;
+import com.heroku.service.RandomFactService;
+
+
+
  
 @Controller
 public class ChatMessageController {
- 
-   /* @Autowired*/
-    ChatService chatService;
- 
-    @RequestMapping("/loginchat")
-    public String login() {
-        return "loginChat";
-    }
- 
-    @RequestMapping("/chatform")
-    public String chat() {
-        return "chatform";
-    }
- 
-    @RequestMapping(value = "/messages", method = RequestMethod.POST)
-    @MessageMapping("/newMessage")
-    @SendTo("/topic/newMessage")
-    public String save(ChatMessageModel chatMessageModel) {
-        ChatMessageModel chatMessage = new ChatMessageModel(chatMessageModel.getText(), chatMessageModel.getAuthor(), new Date());
-        chatService.insertChat(chatMessage);
-        List<ChatMessageModel> chatMessageModelList = (List<ChatMessageModel>) chatService.ListChat();
-        return chatMessageModelList.toString();
-    }
- 
-    @RequestMapping(value = "/messages", method = RequestMethod.GET)
-    public HttpEntity list() {
-    /*    List<ChatMessageModel> chatMessageModelList = chatMessageRepository.findAll(new PageRequest(0, 5, Sort.Direction.DESC, "createDate")).getContent();*/
-    	List<ChatMessageModel> chatMessageModelList = chatService.ListChat();
-    	return new ResponseEntity(chatMessageModelList, HttpStatus.OK);
-    }
+ /*
+	private static final Log logger = LogFactory.getLog(ChatMessageController.class);
+
+	private  SimpMessageSendingOperations messagingTemplate;
+	private  RandomFactService randomFactService;
+	private List<String> users = new ArrayList<String>();
+	
+	@Autowired
+	public ChatMessageController(RandomFactService randomFactService, SimpMessageSendingOperations messagingTemplate) {
+		this.messagingTemplate = messagingTemplate;
+		this.randomFactService = randomFactService;
+	}
+		
+	@SubscribeEvent("/join")
+	public List<String> join(Principal principal) {
+		if(!users.contains(principal.getName())) {
+			users.add(principal.getName());
+		}
+		
+		// notify all subscribers of new user
+		messagingTemplate.convertAndSend("/topic/join", principal.getName());
+		
+		return users;
+	}
+
+	@MessageMapping(value="/chat")
+	public void chatReveived(Chat chat, Principal principal) {
+		chat.setFrom(principal.getName());
+		
+		if("all".equals(chat.getTo())) {
+			messagingTemplate.convertAndSend("/queue/chats", chat);
+		}
+		else {
+			messagingTemplate.convertAndSendToUser(chat.getTo(), "/queue/chats", chat);
+		}
+		
+	}
+	
+	@MessageExceptionHandler
+	@SendToUser(value="/queue/errors")
+	public String handleException(Throwable exception) {
+		return exception.getMessage();
+	}
+	
+	@Scheduled(fixedDelay=5000)
+	public void sendRandomFact() {
+		this.messagingTemplate.convertAndSend("/queue/random-fact", randomFactService.randomFact());
+	}*/
 }

@@ -21,8 +21,9 @@ import java.io.IOException;
 import java.util.stream.Collectors;
 
 @Controller
-public class FileUploadController {
 
+@RequestMapping("/upload_file")
+public class FileUploadController {
     private final StorageService storageService;
 
     @Autowired
@@ -30,7 +31,7 @@ public class FileUploadController {
         this.storageService = storageService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/loadall_file")
     public String listUploadedFiles(Model model) throws IOException {
 
         model.addAttribute("files", storageService
@@ -55,7 +56,7 @@ public class FileUploadController {
                 .body(file);
     }
 
-    @RequestMapping("/file")
+    @RequestMapping("/store_file")
     public String handleFileUpload(@RequestParam("file") MultipartFile[] file,
                                    RedirectAttributes redirectAttributes) {
     	for (int i = 0; i < file.length; i++) {

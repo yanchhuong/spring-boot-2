@@ -25,32 +25,25 @@ public class ChatMessageDaoImpl extends JdbcDaoSupport implements ChatMessageRep
 	 private void initialize(){
 	        setDataSource(dataSource);
 	 }
-	@Override
-	public void insertChat(ChatMessageModel rec) {
-		String sql = "INSERT INTO record " +"(text,author) VALUES (?,?)" ;
-        this.getJdbcTemplate().update(sql, new Object[]{rec.getAuthor(),rec.getText()});
-		
-	}
 
 	@Override
-	public void deletebyId(long id) {
-		// TODO Auto-generated method stub
-		
+	public List<ChatMessageModel> getMessages(int messageIndex) {
+		String sql = "SELECT id,data FROM record";
+	    List< Map < String, Object>> rows = this.getJdbcTemplate().queryForList(sql);
+	 
+	    List<ChatMessageModel> result = new ArrayList<ChatMessageModel>();
+	    for(Map <String, Object> row:rows){
+	    	ChatMessageModel rec = new ChatMessageModel();
+	    	
+	        result.add(rec);
+	    }
+	    return result;
 	}
-
 	@Override
-	public List<ChatMessageModel> loadAll() {
-		   String sql = "SELECT id,data FROM chatmessage";
-		    List< Map < String, Object>> rows = this.getJdbcTemplate().queryForList(sql);
-		 
-		    List<ChatMessageModel> result = new ArrayList<ChatMessageModel>();
-		    for(Map <String, Object> row:rows){
-		    	ChatMessageModel rec = new ChatMessageModel();
-		    	rec.setAuthor((String)row.get("author"));
-		        rec.setText((String)row.get("date"));
-		        result.add(rec);
-		    }
-		    return result;
+	public void addMessage(ChatMessageModel ChatMessageModel) {
+		String sql = "INSERT INTO record " +"(data) VALUES (?)" ;
+        this.getJdbcTemplate().update(sql, new Object[]{});
+		
 	}
 
 	

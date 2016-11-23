@@ -11,8 +11,7 @@ import com.heroku.model.ChatMessageModel;
 
  
 public interface ChatMessageRepository {
-	void insertChat(ChatMessageModel rec);
-	void deletebyId (long id);
-	List<ChatMessageModel> loadAll();
+	public List<ChatMessageModel> getMessages(int messageIndex);
+	public void addMessage(ChatMessageModel ChatMessageModel) ;
     
 }
