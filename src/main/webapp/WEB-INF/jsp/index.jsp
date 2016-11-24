@@ -46,6 +46,9 @@
           usersWithPendingMessages[value.id.substring(5)] = true; // strip the user-
         });
         var members = $.parseJSON(activeMembers);
+        
+        console.log('Show : ' + members);
+        
         var userDiv = $('<div>', {id: 'users'});
         $.each(members, function(index, value) {
           if (value === whoami) {
