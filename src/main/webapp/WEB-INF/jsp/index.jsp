@@ -35,20 +35,19 @@
       }
       
       function showActive(activeMembers) {
-        renderActive(activeMembers.body);
+    	  console.log('Test ');
+    	  renderActive(activeMembers.body);
         stompClient.send('/app/activeUsers', {}, '');
       }
       
       function renderActive(activeMembers) {
+    	  
         var previouslySelected = $('.user-selected').text();
         var usersWithPendingMessages = new Object();
         $.each($('.pending-messages'), function(index, value) {
           usersWithPendingMessages[value.id.substring(5)] = true; // strip the user-
         });
         var members = $.parseJSON(activeMembers);
-        
-        console.log('Show : ' + members);
-        
         var userDiv = $('<div>', {id: 'users'});
         $.each(members, function(index, value) {
           if (value === whoami) {
