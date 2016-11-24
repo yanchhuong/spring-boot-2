@@ -28,6 +28,8 @@
           });
           stompClient.subscribe('/topic/active', function(activeMembers) {
             showActive(activeMembers);
+            
+          
           });
         });
       }
@@ -38,6 +40,8 @@
       }
       
       function renderActive(activeMembers) {
+    	  
+    	  console.log(activeMembers);
         var previouslySelected = $('.user-selected').text();
         var usersWithPendingMessages = new Object();
         $.each($('.pending-messages'), function(index, value) {
