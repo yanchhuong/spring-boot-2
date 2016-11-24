@@ -28,19 +28,16 @@
           });
           stompClient.subscribe('/topic/active', function(activeMembers) {
             showActive(activeMembers);
-            
-            console.log('Show : ' + activeMembers);
           });
         });
       }
       
       function showActive(activeMembers) {
-    	renderActive(activeMembers);
+        renderActive(activeMembers.body);
         stompClient.send('/app/activeUsers', {}, '');
       }
       
       function renderActive(activeMembers) {
-    	console.log('render : ');
         var previouslySelected = $('.user-selected').text();
         var usersWithPendingMessages = new Object();
         $.each($('.pending-messages'), function(index, value) {
