@@ -29,7 +29,7 @@
           stompClient.subscribe('/topic/active', function(activeMembers) {
             showActive(activeMembers);
             
-          
+            console.log('TEST:'+ activeMembers);
           });
         });
       }
