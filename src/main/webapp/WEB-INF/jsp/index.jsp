@@ -35,8 +35,7 @@
       }
       
       function showActive(activeMembers) {
-    	  console.log('Test :'+ activeMembers.body);
-    	  renderActive(activeMembers.body);
+    	  renderActive(activeMembers);
         stompClient.send('/app/activeUsers', {}, '');
       }
       
