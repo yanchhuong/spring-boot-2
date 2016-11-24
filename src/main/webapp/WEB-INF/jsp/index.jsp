@@ -40,7 +40,7 @@
       }
       
       function renderActive(activeMembers) {
-    	  
+    	console.log('render : ' + activeMembers);
         var previouslySelected = $('.user-selected').text();
         var usersWithPendingMessages = new Object();
         $.each($('.pending-messages'), function(index, value) {
