@@ -25,13 +25,16 @@ public class MessageController {
   public void greeting(Message<Object> message, @Payload ChatMessage chatMessage) throws Exception {
     Principal principal = message.getHeaders().get(SimpMessageHeaderAccessor.USER_HEADER, Principal.class);
     String authedSender = principal.getName();
-    
+   
+   
     chatMessage.setSender(authedSender);
     String recipient = chatMessage.getRecipient();
     if (!authedSender.equals(recipient)) {
+    	System.out.println(authedSender);
       template.convertAndSendToUser(authedSender, "/queue/messages", chatMessage);
+      
     }
-    
+    System.out.println(recipient);
     template.convertAndSendToUser(recipient, "/queue/messages", chatMessage);
   }
 
