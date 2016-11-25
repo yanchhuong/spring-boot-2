@@ -149,7 +149,7 @@
         var chatWindow = chatContainer.children('.chat');
         var userDisplay = $('<span>', {class: (message.sender === whoami ? 'chat-sender' : 'chat-recipient')});
         
-        userDisplay.html(message.sender + ' says: ');
+        userDisplay.html(message.sender + 'says:');
         
         console.log(message);
         
