@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Language" content="en-us">
 <title>Chat</title>
 <script src="/js-lib/sockjs-0.3.4.js"></script>
 <script src="/js-lib/stomp.js"></script>
@@ -24,9 +25,7 @@
           whoami = frame.headers['user-name'];
           console.log('Connected: ' + frame);
           stompClient.subscribe('/user/queue/messages', function(message) {
-        //    showMessage(JSON.parse(message.body));
-            showMessage(JSON.parse(message.body).userId,JSON.parse(message.body).status,JSON.parse(message.body).imageUrl);
-            
+                showMessage(JSON.parse(message.body));
           });
           stompClient.subscribe('/topic/active', function(activeMembers) {
             showActive(activeMembers);
