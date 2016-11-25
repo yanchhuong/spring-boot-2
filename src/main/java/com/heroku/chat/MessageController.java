@@ -30,11 +30,11 @@ public class MessageController {
     chatMessage.setSender(authedSender);
     String recipient = chatMessage.getRecipient();
     if (!authedSender.equals(recipient)) {
-    	System.out.println(authedSender);
+
       template.convertAndSendToUser(authedSender, "/queue/messages", chatMessage);
       
     }
-    System.out.println(recipient);
+    System.out.println(chatMessage.getMessage());
     template.convertAndSendToUser(recipient, "/queue/messages", chatMessage);
   }
 
