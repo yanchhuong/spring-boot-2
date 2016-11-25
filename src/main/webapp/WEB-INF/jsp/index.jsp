@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Language".../font></p>	<!-- Translate -->
+<meta http-equiv="Content-Language" content="en-us">
 <title>Chat</title>
 <script src="/js-lib/sockjs-0.3.4.js"></script>
 <script src="/js-lib/stomp.js"></script>
