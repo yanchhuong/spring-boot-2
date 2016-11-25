@@ -151,9 +151,10 @@
         
         userDisplay.html(message.sender + ' says: ');
         
+        console.log(message);
         
         var messageDisplay = $('<span>');
-        messageDisplay.html(message.message + "Time:" + message.date);
+        messageDisplay.html(message.message );
         chatWindow.append(userDisplay).append(messageDisplay).append('<br/>');
         chatWindow.animate({ scrollTop: chatWindow[0].scrollHeight}, 1);
         if (message.sender !== whoami) {
