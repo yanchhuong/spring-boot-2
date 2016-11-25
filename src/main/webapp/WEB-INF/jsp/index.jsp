@@ -148,9 +148,12 @@
         var chatContainer = getChatWindow(chatWindowTarget);
         var chatWindow = chatContainer.children('.chat');
         var userDisplay = $('<span>', {class: (message.sender === whoami ? 'chat-sender' : 'chat-recipient')});
+        
         userDisplay.html(message.sender + ' says: ');
+        
+        
         var messageDisplay = $('<span>');
-        messageDisplay.html(message.message);
+        messageDisplay.html(message.message + "Time:" + message.date);
         chatWindow.append(userDisplay).append(messageDisplay).append('<br/>');
         chatWindow.animate({ scrollTop: chatWindow[0].scrollHeight}, 1);
         if (message.sender !== whoami) {

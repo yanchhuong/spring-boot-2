@@ -1,5 +1,7 @@
 package com.heroku.chat;
 
+import java.sql.Date;
+
 public class ChatMessage {
 	  
 	  private String recipient;
@@ -14,7 +16,13 @@ public class ChatMessage {
 	  
 	  private String message;
 	  
-	  public String getMessage() { return message; }
+	  private Date date;
+	  
+	  public Date getDate() {return date;}
+	  public void setDate(Date date) {
+		this.date = (Date) new java.util.Date();
+	}
+	public String getMessage() { return message; }
 	  public void setMessage(String message) { this.message = message; }
 
 	}
