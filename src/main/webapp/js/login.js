@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-/*$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+$('.form').find('input, textarea').on('keyup blur focus', function (e) {
   
   var $this = $(this),
       label = $this.prev('label');
@@ -28,13 +28,13 @@ $(document).ready(function(){
 			}
     }
 
-});*/
+});
 
 $('.tab a').on('click', function (e) {
 	
-	alert();
+
   
-/*  e.preventDefault();
+ e.preventDefault();
   
   $(this).parent().addClass('active');
   $(this).parent().siblings().removeClass('active');
@@ -43,7 +43,7 @@ $('.tab a').on('click', function (e) {
 
   $('.tab-content > div').not(target).hide();
   
-  $(target).fadeIn(600);*/
+  $(target).fadeIn(600);
   
 });
 
