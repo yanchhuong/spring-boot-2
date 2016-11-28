@@ -11,7 +11,8 @@
    <meta name="_csrf" content="${_csrf.token}"/>
     <!-- default header name is X-CSRF-TOKEN -->
    <meta name="_csrf_header" content="${_csrf.headerName}"/>
-  
+    
+    <script src="/js/login.js"></script>
 </head>
 
 <body>
@@ -97,7 +98,7 @@
       
 </div> <!-- /form -->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="/js/login.js"></script>
+  <script src="/js/login.js"></script>
 
 </body>
 </html>
