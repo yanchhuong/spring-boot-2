@@ -97,7 +97,8 @@
       </div><!-- tab-content -->
       
 </div> <!-- /form -->
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+ <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> --> 
+  <script src="/js/jquery-1.7.2.min.js"></script> 
   <script src="/js/login.js"></script>
 
 </body>
