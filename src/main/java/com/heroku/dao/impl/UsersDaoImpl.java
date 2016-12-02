@@ -30,8 +30,8 @@ public class UsersDaoImpl extends JdbcDaoSupport implements UsersDao{
 	}
 	@Override
 	public void insertUserLog(UserDetailBean user) {
-		String sql = "INSERT INTO USERS " +"(user_cd,username,password,enabled) VALUES (?,?,?,?)" ;
-        this.getJdbcTemplate().update(sql, new Object[]{user.getUserCd(),user.getUsername(),user.getPassword(),user.isEnable()});
+		String sql = "INSERT INTO USERS " +"(user_cd,username,password) VALUES (?,?,?)" ;
+        this.getJdbcTemplate().update(sql, new Object[]{user.getUserCd(),user.getUsername(),user.getPassword()});
 		
 	}
 	@Override
