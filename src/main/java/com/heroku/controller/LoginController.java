@@ -39,7 +39,7 @@ public class LoginController  {
 		return "login";
 	}
 	@RequestMapping(value = "/sign_up",method = RequestMethod.POST)
-	public String insertData(ModelMap model,HttpServletRequest request,BindingResult result) {
+	public String insertData(ModelMap model,HttpServletRequest request) {
 		UserDetailBean record=new UserDetailBean();
 		record.setFirst(request.getParameter("firstname")); 
 		record.setLast(request.getParameter("lastname"));
@@ -48,12 +48,11 @@ public class LoginController  {
         record.setEmail(request.getParameter("email"));
         record.setEnable(true);
         record.setUserCd(userCd());
-	        if (!result.hasErrors()) {
 	        	if(userService.insertUserLog(record)){
 	        	      userService.insertRole(record);
 	        		  userService.insertUserLog(record);
 	        	};
-	        }
+	       
 	        return ("Sucessful");
 	  }
 	
