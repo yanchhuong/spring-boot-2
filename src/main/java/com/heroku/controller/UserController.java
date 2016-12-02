@@ -42,7 +42,7 @@ public class UserController {
         userService.AddUser(record); 
 		
 		
-		return "";
+		return "Welcome !";
 	}
 /*	public String userCd(){
 		Random r = new Random(System.currentTimeMillis());
