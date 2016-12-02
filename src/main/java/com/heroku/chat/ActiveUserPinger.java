@@ -20,10 +20,8 @@ public class ActiveUserPinger {
   @Scheduled(fixedDelay = 2000)
   public void pingUsers() {
 	  
-	 String data="{\"name\":\"mkyong\",\"age\":35,\"position\":\"Founder\",\"salary\":10000,\"skills\":[\"java\",\"python\",\"shell\"]}";
     Set<String> activeUsers = activeUserService.getActiveUsers();
-    
-    template.convertAndSend("/topic/active", data);
+    template.convertAndSend("/topic/active", activeUsers);
   }
 
 }
