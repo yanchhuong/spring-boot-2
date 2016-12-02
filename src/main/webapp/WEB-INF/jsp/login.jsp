@@ -46,9 +46,9 @@
 
           <div class="field-wrap">
             <label>
-              Email Address<span class="req" id="email">*</span>
+              Email Address<span class="req" >*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="email"required autocomplete="off" id="email"/>
           </div>
           
           <div class="field-wrap">

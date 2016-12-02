@@ -59,7 +59,7 @@ function ftsign_up(){
 			input["firstname"] = $("#firstname").val();
 			input["lastname"]  = $("#lastname").val();
 			input["email"]     = $("#email").val();
-			input["password"]  = $("#email").val();
+			input["password"]  = $("#password").val();
 			  $.ajax({
 			    	type   : 'POST',
 			    	url    :  '/sign_up',

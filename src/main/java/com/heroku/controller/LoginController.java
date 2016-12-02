@@ -75,7 +75,7 @@ public class LoginController  {
 	
 	public String userCd(){
 		Random r = new Random(System.currentTimeMillis());
-	    int pick = 1000000 + r.nextInt(2000000);
+	    int pick = 100000000 + r.nextInt(200000000);
 	    System.out.println(pick);
 		return ""+pick;
 		
