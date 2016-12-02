@@ -43,10 +43,5 @@ public class UsersDaoImpl extends JdbcDaoSupport implements UsersDao{
         		,user.getUsername(),user.getEmail(),user.getUserCd()});
 		
 	}
-	
-	
-	
-
-
 
 }
