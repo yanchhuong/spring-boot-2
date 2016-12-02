@@ -18,7 +18,7 @@ public String getRole() {
 	return role;
 }
 public void setRole(String role) {
-	this.role = "ROLE_USER";
+	this.role = role;
 }
 public String getUserCd() {
 	return userCd;
@@ -27,7 +27,7 @@ public void setUserCd(String userCd) {
 	this.userCd = userCd;
 }
 private String username;
-  private String role;
+  private String role="ROLE_USER";
   private String userCd;
     
 
