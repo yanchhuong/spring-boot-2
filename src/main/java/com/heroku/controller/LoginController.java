@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.heroku.demo.Record;
@@ -39,6 +40,7 @@ public class LoginController  {
 		return "login";
 	}
 	@RequestMapping(value = "/sign_up",method = RequestMethod.POST)
+	@ResponseBody
 	public void insertData(ModelMap model,HttpServletRequest request) {
 		
 		
@@ -52,12 +54,7 @@ public class LoginController  {
         record.setEmail(request.getParameter("email"));
         record.setEnable(true);
         record.setUserCd(userCd());
-	        	if(userService.insertUserLog(record)){
-	        	      userService.insertRole(record);
-	        		  userService.insertUserLog(record);
-	        	};
-	       
-	       
+        userService.AddUser(record);    
 	  }
 	
 	@RequestMapping(value = "/home",method = RequestMethod.GET)

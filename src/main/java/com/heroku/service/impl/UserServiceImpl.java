@@ -14,22 +14,12 @@ public class UserServiceImpl implements UserService{
     UsersDao userDao;
 	
 	@Override
-	public boolean insertRole(UserDetailBean user) {
+	public boolean AddUser(UserDetailBean user) {
 		userDao.insertRole(user);
-		return true;
-	}
-
-	@Override
-	public boolean insertUserLog(UserDetailBean user) {
-		userDao.insertUserLog(user);
-		return true;
-	}
-
-	@Override
-	public boolean insertUserDetail(UserDetailBean user) {
 		userDao.insertUserDetail(user);
-		return true;
+		userDao.insertUserLog(user);
 		
+		return true;
 	}
 
 }
