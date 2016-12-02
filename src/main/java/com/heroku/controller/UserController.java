@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.heroku.model.UserDetailBean;
@@ -24,7 +23,6 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/sign_up",method = RequestMethod.POST)
-	@ResponseBody
 	public String AddUser(ModelMap model,HttpServletRequest request){
 	
 		System.out.println(request.getParameter("email") +request.getParameter("password") );

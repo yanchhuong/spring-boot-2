@@ -26,7 +26,7 @@
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
-          <form action="/sign_up" method="post" >
+          <form  method="post" >
           
           <div class="top-row">
             <div class="field-wrap">
