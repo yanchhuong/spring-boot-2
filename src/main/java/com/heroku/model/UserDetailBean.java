@@ -61,7 +61,7 @@ public class UserDetailBean extends UserBean {
 		return registerDate;
 	}
 	public void setRegisterDate(String registerDate) {
-		this.registerDate = dtf.format(localDate);
+		this.registerDate = registerDate;
 	}
 	public String getProfile_fname() {
 		return profile_fname;
@@ -78,7 +78,7 @@ public class UserDetailBean extends UserBean {
     private String email;
     private String locat_id;
     private String address;
-    private String registerDate;
+    private String registerDate= dtf.format(localDate);;
     private String profile_fname;
 	
 
