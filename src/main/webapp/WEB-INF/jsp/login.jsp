@@ -59,7 +59,8 @@
           </div>
           
           <button type="submit" class="button button-block" id="btsign_up"/>Get Started</button>
-          
+           <input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
           </form>
 
         </div>
