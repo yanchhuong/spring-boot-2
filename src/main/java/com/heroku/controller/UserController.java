@@ -1,5 +1,8 @@
 package com.heroku.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,21 +36,25 @@ public class UserController {
 		record.setUsername(request.getParameter("email"));
 		record.setPassword(request.getParameter("password"));
         record.setEmail(request.getParameter("email"));
+        record.setRegisterDate(nowDateTime());
         record.setEnable(true);
-        record.setUserCd(userCd());
+        record.setUserCd(nowDateTime());
         userService.AddUser(record); 
 		
 		
 		return "";
 	}
-	public String userCd(){
+/*	public String userCd(){
 		Random r = new Random(System.currentTimeMillis());
 	    int pick = 100000000 + r.nextInt(200000000);
 	    System.out.println(pick);
-		return ""+pick;
+		return ""+pick;	
+	}*/
+	public String nowDateTime(){
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		Date date = new Date();
 		
+		return dateFormat.format(date);
 	}
-	
-	    
 		 
 }

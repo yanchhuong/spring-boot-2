@@ -7,9 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class UserDetailBean extends UserBean {
-	
-	DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-	Date date = new Date();
+
 
 	public String getFirst() {
 		return first;
@@ -80,7 +78,7 @@ public class UserDetailBean extends UserBean {
     private String email;
     private String locat_id;
     private String address;
-    private String registerDate = dateFormat.format(date);;
+    private String registerDate ;
     private String profile_fname;
 	
 
