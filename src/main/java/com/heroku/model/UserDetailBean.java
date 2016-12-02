@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class UserDetailBean extends UserBean {
 	
-	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddmmyyyy");
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/mm/yyyy");
 	LocalDate localDate = LocalDate.now();
 	
 
