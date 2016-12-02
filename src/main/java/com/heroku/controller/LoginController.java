@@ -71,7 +71,7 @@ public class LoginController  {
 		return "home";
 	}
 
-	@RequestMapping(value = "/",method = RequestMethod.GET)
+	@RequestMapping(value = "/chatting",method = RequestMethod.GET)
 	public String error(
 			ModelMap model,HttpServletRequest request,RedirectAttributes redir) {
 		return "index";
