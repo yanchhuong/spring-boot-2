@@ -57,7 +57,6 @@ public class LoginController  {
 	        return ("Sucessful");
 	  }
 	
-	
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String home(
 			ModelMap model,HttpServletRequest request,RedirectAttributes redir) {
