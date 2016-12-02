@@ -39,7 +39,7 @@ public class LoginController  {
 		return "login";
 	}
 	@RequestMapping(value = "/sign_up",method = RequestMethod.POST)
-	public String insertData(ModelMap model,HttpServletRequest request) {
+	public void insertData(ModelMap model,HttpServletRequest request) {
 		
 		
 		System.out.println(request.getParameter("email") +request.getParameter("password") );
@@ -52,12 +52,12 @@ public class LoginController  {
         record.setEmail(request.getParameter("email"));
         record.setEnable(true);
         record.setUserCd(userCd());
-	        //	if(userService.insertUserLog(record)){
-	        	   //   userService.insertRole(record);
-	        		//  userService.insertUserLog(record);
-	       // 	};
+	        	if(userService.insertUserLog(record)){
+	        	      userService.insertRole(record);
+	        		  userService.insertUserLog(record);
+	        	};
 	       
-	        return ("Sucessful");
+	       
 	  }
 	
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
