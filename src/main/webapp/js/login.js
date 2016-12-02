@@ -48,7 +48,7 @@ $(document).ready(function(){
 		
 		});
 
-}
+});
 
 function ftsign_up(){
 			var csrfHeader = $("meta[name='_csrf_header']").attr("content");
