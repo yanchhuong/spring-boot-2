@@ -1,13 +1,15 @@
 package com.heroku.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class UserDetailBean extends UserBean {
 	
-	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/mm/yyyy");
-	LocalDate localDate = LocalDate.now();
-	
+	DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+	Date date = new Date();
 
 	public String getFirst() {
 		return first;
@@ -78,7 +80,7 @@ public class UserDetailBean extends UserBean {
     private String email;
     private String locat_id;
     private String address;
-    private String registerDate= dtf.format(localDate);;
+    private String registerDate = dateFormat.format(date);;
     private String profile_fname;
 	
 
