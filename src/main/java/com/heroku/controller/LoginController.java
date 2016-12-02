@@ -39,23 +39,6 @@ public class LoginController  {
 		
 		return "login";
 	}
-	@RequestMapping(value = "/sign_up",method = RequestMethod.POST)
-	@ResponseBody
-	public void insertData(ModelMap model,HttpServletRequest request) {
-		
-		
-		System.out.println(request.getParameter("email") +request.getParameter("password") );
-		
-		UserDetailBean record=new UserDetailBean();
-		record.setFirst(request.getParameter("firstname")); 
-		record.setLast(request.getParameter("lastname"));
-		record.setUsername(request.getParameter("email"));
-		record.setPassword(request.getParameter("password"));
-        record.setEmail(request.getParameter("email"));
-        record.setEnable(true);
-        record.setUserCd(userCd());
-        userService.AddUser(record);    
-	  }
 	
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String home(
@@ -74,13 +57,6 @@ public class LoginController  {
 		return "index";
 	}
 	
-	public String userCd(){
-		Random r = new Random(System.currentTimeMillis());
-	    int pick = 100000000 + r.nextInt(200000000);
-	    System.out.println(pick);
-		return ""+pick;
-		
-	}
-	
+
 	
 }

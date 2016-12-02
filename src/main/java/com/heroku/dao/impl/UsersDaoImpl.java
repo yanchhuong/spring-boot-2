@@ -24,8 +24,8 @@ public class UsersDaoImpl extends JdbcDaoSupport implements UsersDao{
 	
 	@Override
 	public void insertRole(UserDetailBean user) {
-		String sql = "INSERT INTO USER_ROLES " +"(username,role,user_cd) VALUES (?,?,?)" ;
-        this.getJdbcTemplate().update(sql, new Object[]{user.getUsername(),user.getRole(),user.getUserCd()});
+		String sql = "INSERT INTO USER_ROLES " +"(username,role) VALUES (?,?)" ;
+        this.getJdbcTemplate().update(sql, new Object[]{user.getUsername(),user.getRole()});
 		
 	}
 	@Override

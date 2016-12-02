@@ -62,7 +62,7 @@ function ftsign_up(){
 			input["password"]  = $("#password").val();
 			  $.ajax({
 			    	type   : 'POST',
-			    	url    :  '/sign_up',
+			    	url    :  '/users/sign_up',
 			    	cache: false,
 			        async: false,
 			        
