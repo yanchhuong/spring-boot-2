@@ -1,4 +1,4 @@
-package com.heroku.demo;
+/*package com.heroku.demo;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -15,4 +15,4 @@ public class DatabaseConfig {
     public DataSource dataSource() {
         return new org.apache.tomcat.jdbc.pool.DataSource();
     }
-}
+}*/
