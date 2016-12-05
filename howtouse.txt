@@ -3,7 +3,8 @@ install git CLI  - > open command --> run like bellow
 
 
 $ heroku logs -t --app app-name
-Ex  $ heroku logs -t --app spring-boot-3
+
+# example:   $ heroku logs -t --app spring-boot-3
 
 
 #how to run script sql 
