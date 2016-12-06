@@ -1,4 +1,4 @@
-<%-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
    <meta name="_csrf_header" content="${_csrf.headerName}"/>
 
 </head>
-
+<%--
 <body>
   <div class="form">
       
