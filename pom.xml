@@ -15,6 +15,30 @@
     </parent>
 
     <dependencies>
+    <dependency>
+   			 <groupId>org.apache.tomcat</groupId>
+    		<artifactId>tomcat-jasper</artifactId>
+    		<version>8.0.24</version>
+	</dependency>
+     <dependency>
+    	<groupId>net.sf.jasperreports</groupId>
+    	<artifactId>jasperreports</artifactId>
+    		<version>4.5.0</version>
+      <exclusions>
+      <exclusion>
+        	<groupId>commons-logging</groupId>
+       	 <artifactId>commons-logging</artifactId>
+      </exclusion>
+      <exclusion>
+        	<artifactId>jackson-mapper-lgpl</artifactId>
+        	<groupId>org.codehaus.jackson</groupId>
+       </exclusion>
+       <exclusion>
+          <artifactId>jackson-core-lgpl</artifactId>
+          <groupId>org.codehaus.jackson</groupId>
+         </exclusion>        
+       </exclusions>
+     </dependency>
     
    	  <dependency>
     		<groupId>org.mortbay.jetty</groupId>
