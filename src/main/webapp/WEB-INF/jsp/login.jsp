@@ -1,4 +1,4 @@
-<%--  <!DOCTYPE html>
+<!DOCTYPE html>
 <html >
 <head>
   <title>Sign-Up/Login Form</title>
@@ -100,6 +100,3 @@
 
 </body>
 </html>
- --%>
- 
- hello
