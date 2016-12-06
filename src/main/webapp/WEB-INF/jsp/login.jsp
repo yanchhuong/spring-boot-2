@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Sign-Up/Login Form</title>
-  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	  
    <link rel="stylesheet" type="text/css" href="/css/login.css">
@@ -58,7 +57,7 @@
             <input type="password"required autocomplete="off" id="password"/>
           </div>
           
-          <button type="submit" class="button button-block" id="btsign_up"/>Get Started</button>
+          <button type="submit" class="button button-block" id="btsign_up">Get Started</button>
            <input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
           </form>
@@ -74,7 +73,7 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="text"required autocomplete="off"/ name="username">
+            <input type="text"required autocomplete="off" name="username" />
           </div>
           
           <div class="field-wrap">
@@ -86,7 +85,7 @@
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
-          <button class="button button-block"/>Log In</button>
+          <button class="button button-block">Log In</button>
           
 		  <input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
