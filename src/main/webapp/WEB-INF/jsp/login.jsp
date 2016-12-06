@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sign-Up/Login Form</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-	  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">	  
    <link rel="stylesheet" type="text/css" href="/css/login.css">
 
 <%--    <meta name="_csrf" content="${_csrf.token}"/>
