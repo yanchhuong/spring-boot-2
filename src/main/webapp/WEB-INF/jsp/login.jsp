@@ -1,13 +1,13 @@
- <!DOCTYPE html>
+<%--  <!DOCTYPE html>
 <html >
 <head>
   <title>Sign-Up/Login Form</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">	  
    <link rel="stylesheet" type="text/css" href="/css/login.css">
 
-<%--    <meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf" content="${_csrf.token}"/>
     <!-- default header name is X-CSRF-TOKEN -->
-   <meta name="_csrf_header" content="${_csrf.headerName}"/> --%>
+   <meta name="_csrf_header" content="${_csrf.headerName}"/> 
 
 </head>
 
@@ -100,3 +100,6 @@
 
 </body>
 </html>
+ --%>
+ 
+ hello
