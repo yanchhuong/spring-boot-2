@@ -1,7 +1,6 @@
 package com.heroku.config;
 
-import java.util.List;
-
+import com.heroku.service.ActiveUserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.converter.MessageConverter;
@@ -14,7 +13,7 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketTransportRegistration;
 
-import com.heroku.service.impl.ActiveUserService;
+import java.util.List;
 
 @Configuration
 @EnableWebSocketMessageBroker

@@ -3,22 +3,23 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.github.britter</groupId>
-    <artifactId>spring-boot-heroku</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>api-core</artifactId>
+    <version>0.0.1</version>
+    <packaging>war</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.5.RELEASE</version>
+        <version>2.7.8</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <dependencies>
     <dependency>
    			 <groupId>org.apache.tomcat</groupId>
     		<artifactId>tomcat-jasper</artifactId>
-    		<version>8.0.24</version>
+    		<version>9.0.71</version>
 	</dependency>
      <dependency>
     	<groupId>net.sf.jasperreports</groupId>
@@ -45,42 +46,21 @@
     	<artifactId>commons-digester</artifactId>
     	<version>2.1</version>
 	 </dependency>
-    
-   	  <dependency>
-    		<groupId>org.mortbay.jetty</groupId>
-    		<artifactId>jsp-2.1</artifactId>
-    		<version>6.1.14</version>
-		</dependency>
-    	<dependency>
-    		<groupId>de.odysseus.juel</groupId>
-    		<artifactId>juel-api</artifactId>
-    		<version>2.2.7</version>
-	   </dependency>
+
 	   <dependency>
     		<groupId>de.odysseus.juel</groupId>
     		<artifactId>juel-impl</artifactId>
     		<version>2.2.7</version>
 		</dependency>
-	   
-       <dependency>
-          <groupId>javax.el</groupId>
-          <artifactId>el-api</artifactId>
-          <version>2.2</version>
-       </dependency>
-       <dependency>
-		 <groupId>org.glassfish.web</groupId>
-		  <artifactId>el-impl</artifactId>
-	      <version>2.2</version>
-        </dependency>
     	<dependency>
    			<groupId>org.hibernate</groupId>
    			<artifactId>hibernate-validator</artifactId>
-   			<version>4.3.1.Final</version>
+            <version>6.1.0.Final</version> <!-- Ensure compatibility -->
 		</dependency> 
         <dependency>
     		<groupId>org.hibernate</groupId>
     		<artifactId>hibernate-core</artifactId>
-    		<version>5.2.5.Final</version>
+            <version>5.6.15.Final</version>
 		</dependency>
 		<!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
 		<dependency>
@@ -101,13 +81,12 @@
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
        <dependency>
@@ -132,11 +111,12 @@
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>2.7.8</version>
         </dependency>
 		<dependency>
         	<groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-           <version>1.6.1.RELEASE</version>
+            <version>2.7.7</version>
        </dependency>
 		
 		<!--Jar for chat  +++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -161,6 +141,7 @@
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator</artifactId>
+            <version>0.46</version>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
@@ -238,6 +219,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>9.0.56</version> <!-- Choose the appropriate version -->
+        </dependency>
         <dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -251,10 +238,11 @@
 		</dependency>
 		
 		<!--Facebook Jar -->
-		<dependency>
+		<!--<dependency>
    			 <groupId>org.springframework.social</groupId>
              <artifactId>spring-social-facebook</artifactId>
-		</dependency>
+            <version>1.1.0.RELEASE</version>  &lt;!&ndash; A more stable version &ndash;&gt;
+		</dependency>-->
 	
 		<dependency>
            <groupId>org.springframework.social</groupId>
@@ -272,13 +260,52 @@
        	<artifactId>spring-boot-configuration-processor</artifactId>
        	<optional>true</optional>
        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.tomcat</groupId>
+                    <artifactId>tomcat-util</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>4.0.2</version>
+        </dependency>
     </dependencies>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>  <!-- Or you can use 11 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<servletapi.version>3.1.0</servletapi.version>  
+		<servletapi.version>3.1.0</servletapi.version>
     </properties> 
 
     <build>
@@ -286,6 +313,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.8</version>  <!-- Ensure this is the correct version -->
             </plugin>
         </plugins>
     </build>

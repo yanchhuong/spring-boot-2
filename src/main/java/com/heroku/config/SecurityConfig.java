@@ -1,55 +1,54 @@
 package com.heroku.config;
 
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	@Autowired
-	DataSource dataSource;
+public class SecurityConfig {
 
-	@Autowired
-	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-		auth.jdbcAuthentication().dataSource(dataSource)
-				.usersByUsernameQuery("select username,password, enabled from users where username=?")
-				.authoritiesByUsernameQuery("select username, role from user_roles where username=?");
-		        
-
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http
+				.authorizeRequests()
+					.antMatchers("/css/**", "/js/**", "/img/**").permitAll() // allow static
+					.antMatchers("/publishing/**/**").permitAll() // allow publishing
+					.antMatchers("/admin/**").permitAll() // Allow public URLs
+					.antMatchers("/hello").permitAll() // Allow public URLs
+					.antMatchers("/home").permitAll() // Allow public URLs
+					.antMatchers("/api/v1/**").permitAll() // Allow public URLs
+					.antMatchers("/sample/**").permitAll() // for sample test data
+				//.antMatchers("/admin/**").hasRole("ADMIN") // Secure admin URLs
+					.anyRequest().authenticated() // This should always be last
+				.and()
+					.formLogin()
+					.loginPage("/login").permitAll()
+				.and()
+					.logout().permitAll()
+				.and()
+					.sessionManagement()
+						.maximumSessions(1) // Allow only one active session per user
+						.expiredUrl("/login?expired=true"); // Redirect if the session expires
+	         	;
+		return http.build();
 	}
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
 
-				// control by log in for page
-				.antMatchers("/")
-				.access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')")
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-				.antMatchers("/users").access("hasRole('ROLE_ADMIN')")
-				.antMatchers("/users/add").access("hasRole('ROLE_ADMIN')")
-				.antMatchers("/users/**/update").access("hasRole('ROLE_ADMIN')")
-				.antMatchers("/users/**/delete").access("hasRole('ROLE_ADMIN')")
-
-				.anyRequest().permitAll()
-				
-				.anyRequest().permitAll()
-		   .and()
-		   		.formLogin().loginPage("/login")
-		   		.usernameParameter("username")
-				.passwordParameter("password")
-				
-			.and()
-				.logout().logoutSuccessUrl("/login?logout")
-				
-			.and()
-				.exceptionHandling().accessDeniedPage("/403")
-			.and().csrf();
+	// Include this if you haven't already
+	@Bean
+	public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+		return authConfig.getAuthenticationManager();
 	}
 
 }

@@ -1,0 +1,64 @@
+application:
+  message: welcome to the application
+spring:
+  profiles:
+    active: dev
+  application:
+    name: COLUY24
+  datasource:
+    url: jdbc:postgresql://172.168.5.30:5432/coluy24
+    #    url: jdbc:postgresql://172.168.5.30:5432/combill24devdb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none  # Use 'validate' to validate schema, 'update' for development, 'none' for production
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        hikaricp:
+          connection-test-query: SELECT 1
+    open-in-view: false
+  jta:
+    bitronix:
+      datasource:
+        share-transaction-connections: true
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  thymeleaf:
+    view-names: thymeleaf/*
+  view:
+    view-names: jsp/*
+    resources:
+      static-locations: classpath:/static/
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.mail: DEBUG
+app:
+  base-url-dev: "http://localhost:5874/"
+  base-url-prod: "https://api-core.kosign.dev"
+server:
+  port: 5874
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-request: true
+      force-response: true
+      multipart:
+        enabled: true
+        max-file-size: 10MB
+        max-request-size: 10MB

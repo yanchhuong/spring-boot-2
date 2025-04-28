@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://172.168.5.30:5432/coluy24
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate  # Safer in production
+    generate-ddl: false
+
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  thymeleaf:
+    view-names: thymeleaf/*
+  view:
+    view-names: jsp/*
+    resources:
+      static-locations: classpath:/static/
+
+logging:
+  level:
+    root: WARN
+    org.hibernate.SQL: OFF
+    org.springframework.mail: ERROR
+
+app:
+  base-url: "https://api-core.kosign.dev"
